@@ -1,0 +1,32 @@
+{
+  "name": "openscad-to-step",
+  "version": "0.1.0",
+  "description": "Convert OpenSCAD files to STEP with exact geometry: the real OpenSCAD evaluates the file, the converter rebuilds every primitive and boolean as B-rep (true cylinders, exact BOSL2 shapes, hull and minkowski) and writes a STEP.",
+  "license": "AGPL-3.0-only",
+  "author": "Forgent3D",
+  "homepage": "https://github.com/forgent3d/openscad-to-step#readme",
+  "repository": { "type": "git", "url": "git+https://github.com/forgent3d/openscad-to-step.git" },
+  "bugs": "https://github.com/forgent3d/openscad-to-step/issues",
+  "keywords": ["openscad", "step", "stp", "cad", "brep", "bosl2", "converter", "3d-printing"],
+  "type": "module",
+  "bin": { "openscad-to-step": "dist/cli.mjs" },
+  "exports": { ".": "./dist/index.mjs", "./package.json": "./package.json" },
+  "files": ["dist", "LICENSE-EXCEPTION.md", "THIRD_PARTY_NOTICES.md"],
+  "engines": { "node": ">=20" },
+  "scripts": {
+    "build": "node scripts/build.mjs",
+    "prepack": "node scripts/build.mjs",
+    "typecheck": "tsc --noEmit",
+    "test": "node scripts/with-openscad.mjs node --import tsx/esm --test src/*.test.ts",
+    "test:fixtures": "node scripts/with-openscad.mjs node --import tsx/esm scripts/scad-diff.mjs"
+  },
+  "dependencies": {
+    "@forgent3d/cad-build": "0.5.0"
+  },
+  "devDependencies": {
+    "@types/node": "^22.10.0",
+    "esbuild": "^0.25.4",
+    "tsx": "^4.23.1",
+    "typescript": "^5.8.2"
+  }
+}

@@ -1,0 +1,6 @@
+node_modules/
+dist/
+.scad-diff/
+.scad-corpus/
+*.step
+package-lock.json

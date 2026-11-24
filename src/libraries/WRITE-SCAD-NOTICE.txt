@@ -1,0 +1,5 @@
+Write.scad by HarlanDMii — https://www.thingiverse.com/thing:16193
+License: Creative Commons Attribution-ShareAlike (CC BY-SA).
+Copied unmodified from https://github.com/rohieb/Write.scad @ 3ba5a7069580447bb08e36bf37d41ec68eeddc77 (a mirror of the Thingiverse thing).
+The author's README adds: "You are welcome to use and distribute this code freely. no need to make it a derivative of write.scad".
+Its DXF fonts are carried by the Forgent3D engine (@forgent3d/cad-build), with this same notice.
