@@ -23,9 +23,11 @@ jobs:
       - run: npm run typecheck
       - run: npm test
       - run: npm run build
-      - name: convert a file end to end
+      - name: convert a file end to end, through the packed package's bin (what npx runs)
         run: |
-          node dist/cli.mjs __fixtures__/cube-hole.scad -o cube-hole.step
+          npm pack --ignore-scripts
+          mkdir -p /tmp/packed && cd /tmp/packed && npm init -y > /dev/null && npm install "$GITHUB_WORKSPACE"/openscad-to-step-*.tgz
+          npx --no-install openscad-to-step "$GITHUB_WORKSPACE/__fixtures__/cube-hole.scad" -o cube-hole.step
           head -c 200 cube-hole.step | grep -q "ISO-10303-21"
 
   fixtures:

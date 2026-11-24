@@ -16,7 +16,9 @@ await build({
   outExtension: { ".js": ".mjs" },
   chunkNames: "chunks/[name]-[hash]",
   external: ["@forgent3d/cad-build"],
-  banner: { js: "import { createRequire as __createRequire } from 'node:module'; const require = __createRequire(import.meta.url);" },
+  // the shebang makes dist/cli.mjs runnable as the npm bin (without it the shell reads the file); in the library and
+  // the chunks it is a comment to Node
+  banner: { js: "#!/usr/bin/env node\nimport { createRequire as __createRequire } from 'node:module'; const require = __createRequire(import.meta.url);" },
   logLevel: "warning",
 });
 

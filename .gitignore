@@ -4,3 +4,4 @@ dist/
 .scad-corpus/
 *.step
 package-lock.json
+*.tgz

@@ -1,6 +1,6 @@
 {
   "name": "openscad-to-step",
-  "version": "0.1.0",
+  "version": "0.1.1",
   "description": "Convert OpenSCAD files to STEP with exact geometry: the real OpenSCAD evaluates the file, the converter rebuilds every primitive and boolean as B-rep (true cylinders, exact BOSL2 shapes, hull and minkowski) and writes a STEP.",
   "license": "AGPL-3.0-only",
   "author": "Forgent3D",
