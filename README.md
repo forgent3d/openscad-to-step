@@ -2,6 +2,8 @@
 
 Convert OpenSCAD files to STEP with real curved surfaces, not triangles.
 
+![The same bracket.scad exported two ways: OpenSCAD's STL is 1,378 triangles, the STEP from openscad-to-step is 17 faces, 10 of them true cylinders](docs/openscad-to-step.png)
+
 ```sh
 npx openscad-to-step bracket.scad            # writes bracket.step
 npx openscad-to-step box.scad -D wall=2.4 -o box-thick.step
